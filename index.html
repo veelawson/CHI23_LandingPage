@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Graduate Labor Rising</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
  
     <!--jquery js-->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -73,97 +73,98 @@
         </div>
     </section>
     <!--Placeholder for MiniMap-->
-    <!--Map-->
-<section>
-    <div id="map"></div>
-        <script>
-            var map1 = L.map('map').setView([40.61283794719691, -56.52796590302782], 4);
-            L.tileLayer('https://api.mapbox.com/styles/v1/lawsonv/ckw6my0mo1ciq15qvkf46956l/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/dark-v10',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ'
-            }).addTo(map1); 
-             
-            //Custom Marker 
-            var spyglass = L.icon({
-                iconUrl: 'assets/img/Spyglass.png',
-                iconSize:     [38, 38],
-                iconAnchor:   [22, 38], // point of the icon which will correspond to marker's location
-                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-                });          
+    <section>
+        <div class="container" style="min-width: 100%;max-width: 100%;height: 100%;width: 100%;padding: 0px;min-height: 100%;margin: 0px;max-height: 100%;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;padding-top: 45px;padding-right: 1px;padding-bottom: 1px;padding-left: 1px;">
+            <div id="minimap">ERROR.</div>
+            <script>
+                var map1 = L.map('map').setView([40.61283794719691, -56.52796590302782], 4);
+                L.tileLayer('https://api.mapbox.com/styles/v1/lawsonv/ckw6my0mo1ciq15qvkf46956l/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/dark-v10',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ'
+                }).addTo(map1); 
                 
-                //Put data here
-                var dataset1 = [             
-                    {
-                        type: 'Feature',
-                        geometry: {
-                            type: 'Point',
-                            coordinates: [-0.076132, 51.508530]
-                        },
-                        properties: {
-                            title: 'Sir Francis Walsingham (c. 1532 - 6 April 1590)',
-                            description: '<img class="resize center" src="https://upload.wikimedia.org/wikipedia/commons/3/38/St_Katharine%27s_%5E_Wapping%2C_London%2C_UK_-_panoramio_%2824%29.jpg"> <br> <b>Location: London, England</b> <br> As Secretary of State under Queen Elizabeth I, <a href="https://en.wikipedia.org/wiki/Francis_Walsingham">Sir Francis Walsingham</a> used an extensive network of informants to identify and round up conspirators against the queen, particularly Catholics, and was involved in the entrapment and execution of Mary Queen of Scots, who was imprisoned in the <a href="https://www.hrp.org.uk/tower-of-london/">Tower of London</a>.',
-                            time: '1532'
+                //Custom Marker 
+                var spyglass = L.icon({
+                    iconUrl: 'assets/img/Spyglass.png',
+                    iconSize:     [38, 38],
+                    iconAnchor:   [22, 38], // point of the icon which will correspond to marker's location
+                    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                    });          
+                    
+                    //Put data here
+                    var dataset1 = [             
+                        {
+                            type: 'Feature',
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [-0.076132, 51.508530]
+                            },
+                            properties: {
+                                title: 'Sir Francis Walsingham (c. 1532 - 6 April 1590)',
+                                description: '<img class="resize center" src="https://upload.wikimedia.org/wikipedia/commons/3/38/St_Katharine%27s_%5E_Wapping%2C_London%2C_UK_-_panoramio_%2824%29.jpg"> <br> <b>Location: London, England</b> <br> As Secretary of State under Queen Elizabeth I, <a href="https://en.wikipedia.org/wiki/Francis_Walsingham">Sir Francis Walsingham</a> used an extensive network of informants to identify and round up conspirators against the queen, particularly Catholics, and was involved in the entrapment and execution of Mary Queen of Scots, who was imprisoned in the <a href="https://www.hrp.org.uk/tower-of-london/">Tower of London</a>.',
+                                time: '1532'
+                            }
                         }
-                    }
-                ];
- 
-          
-                var optionsObject = {
-                    onEachFeature: onEachFeature, 
-                    pointToLayer: function (feature, latlng) {
-                            return L.marker(latlng, {icon: spyglass});
-                    }
-                };
-                        
-                    function onEachFeature (feature, layer) {
-                    var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                    layer.bindPopup(content, {closeButton: true});
-                };
- 
-         
-                // Create the first geoJSON layer
-                var group1 = L.geoJSON(dataset1, optionsObject);
-       
- 
-                // Create the second geoJSON layer from external file
-                $.getJSON("data/dataset2.json", function(json) {
-                    var group2 = L.geoJSON(json, optionsObject);
- 
-                // Create the third geoJSON layer
-                var group3 = L.geoJSON(dataset3, optionsObject);
- 
-                // Create the fourth geoJSON layer
-                var group4 = L.geoJSON(dataset4, optionsObject);
- 
-                // Set the time attribute for each group
-                group1.options.time = "1500s";
-                group2.options.time = "1700s";
-                group3.options.time = "1800s";
-                group4.options.time = "1900s-Present";
- 
- 
-                // Create the layerGroup
-                 var multiLayers = L.layerGroup([group1, group2, group3, group4]);
- 
-                // Set the sliderControl options
-                var sliderControl1 = L.control.sliderControl( {
-                    layer: multiLayers, //REQUIRED
-                    alwaysShowDate: true,
-                    showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
-                    showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
-                });
- 
-                // Add the slider to the map
-                map1.addControl(sliderControl1);
- 
-                // Initialize the slider
-                sliderControl1.startSlider();
-                });
-         </script>
+                    ];
+    
+            
+                    var optionsObject = {
+                        onEachFeature: onEachFeature, 
+                        pointToLayer: function (feature, latlng) {
+                                return L.marker(latlng, {icon: spyglass});
+                        }
+                    };
+                            
+                        function onEachFeature (feature, layer) {
+                        var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                        layer.bindPopup(content, {closeButton: true});
+                    };
+    
+            
+                    // Create the first geoJSON layer
+                    var group1 = L.geoJSON(dataset1, optionsObject);
+        
+    
+                    // Create the second geoJSON layer from external file
+                    $.getJSON("data/dataset2.json", function(json) {
+                        var group2 = L.geoJSON(json, optionsObject);
+    
+                    // Create the third geoJSON layer
+                    var group3 = L.geoJSON(dataset3, optionsObject);
+    
+                    // Create the fourth geoJSON layer
+                    var group4 = L.geoJSON(dataset4, optionsObject);
+    
+                    // Set the time attribute for each group
+                    group1.options.time = "1500s";
+                    group2.options.time = "1700s";
+                    group3.options.time = "1800s";
+                    group4.options.time = "1900s-Present";
+    
+    
+                    // Create the layerGroup
+                    var multiLayers = L.layerGroup([group1, group2, group3, group4]);
+    
+                    // Set the sliderControl options
+                    var sliderControl1 = L.control.sliderControl( {
+                        layer: multiLayers, //REQUIRED
+                        alwaysShowDate: true,
+                        showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
+                        showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
+                    });
+    
+                    // Add the slider to the map
+                    map1.addControl(sliderControl1);
+    
+                    // Initialize the slider
+                    sliderControl1.startSlider();
+                    });
+            </script>
+        </div>
     </section>
          
 
