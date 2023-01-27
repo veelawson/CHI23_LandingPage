@@ -129,9 +129,8 @@
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
             
-        
                         // Create the second geoJSON layer from external file
-                        $.getJSON("data/dataset2.json", function(json) {
+                       // $.getJSON("data/dataset2.json", function(json) {
                             var group2 = L.geoJSON(json, optionsObject);
         
                         // Create the third geoJSON layer
@@ -151,7 +150,7 @@
                         var multiLayers = L.layerGroup([group1, group2, group3, group4]);
         
                         // Set the sliderControl options
-                        var sliderControl1 = L.control.sliderControl( {
+                        var sliderControl1 = L.control.sliderControl({
                             layer: multiLayers, //REQUIRED
                             alwaysShowDate: true,
                             showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
@@ -163,9 +162,8 @@
         
                         // Initialize the slider
                         sliderControl1.startSlider();
-                        });
                 </script>
-            </div>
+        </div>
    </section>
          
 
