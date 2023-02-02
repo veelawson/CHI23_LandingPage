@@ -131,7 +131,7 @@
             
                         // Create the second geoJSON layer from external file
                        // $.getJSON("data/dataset2.json", function(json) {
-                            var group2 = L.geoJSON(json, optionsObject);
+                        var group2 = L.geoJSON(json, optionsObject);
         
                         // Create the third geoJSON layer
                         var group3 = L.geoJSON(dataset3, optionsObject);
@@ -140,14 +140,17 @@
                         var group4 = L.geoJSON(dataset4, optionsObject);
         
                         // Set the time attribute for each group
-                        group1.options.time = "1500s";
-                        group2.options.time = "1700s";
-                        group3.options.time = "1800s";
-                        group4.options.time = "1900s-Present";
+                        group1.options.time = "1960s";
+                        group2.options.time = "1970s";
+                        group3.options.time = "1980s";
+                        group4.options.time = "1990s";
+                        group5.options.time = "2000s";
+                        group6.options.time = "2010s";
+                        group7.options.time = "2020s";
         
         
                         // Create the layerGroup
-                        var multiLayers = L.layerGroup([group1, group2, group3, group4]);
+                        var multiLayers = L.layerGroup([group1, group2, group3, group4, group5, group6, group7]);
         
                         // Set the sliderControl options
                         var sliderControl1 = L.control.sliderControl({
