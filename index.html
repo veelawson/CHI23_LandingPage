@@ -63,17 +63,18 @@
 
                     //Icon?
                     var publicIcon = L.icon({
-                        iconUrl: 'assets\img\public_pin.PNG',
+                        iconUrl: 'assets\img\public_pin.png',
                         iconSize: [38, 95],
                         iconAnchor: [22, 94],
                         popupAnchor: [-3, -76],
                     });
                     var privateIcon = L.icon({
-                        iconUrl: 'assets\img\private_pin.PNG',
+                        iconUrl: 'assets\img\private_pin.png',
                         iconSize: [38, 95],
                         iconAnchor: [22, 94],
                         popupAnchor: [-3, -76],
                     });
+
                     //Put data here
                         var dataset1 = [             
                             {
@@ -97,7 +98,13 @@
                                 properties: {
                                     title: "Teaching Assistants’ Association",
                                     description: "The Teaching Assistants' Association (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
-                                    time: "1969"
+                                    time: "1969",
+                                    icon: {
+                                        iconUrl: 'assets\img\public_pin.png',
+                                        iconSize: [30, 30],
+                                        iconAnchor: [3, 35],
+                                        popupAnchor: [0, -41],
+                                        }
                                 }
                             }
                         ];
@@ -128,6 +135,15 @@
                             }
                         ];           
   
+                        // Popups
+                       var optionsObject = {
+                                onEachFeature: onEachFeature
+                            };
+                                    
+                            function onEachFeature (feature, layer) {
+                                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                                layer.bindPopup(content, {closeButton: true});
+                            };
 
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
@@ -139,7 +155,6 @@
                        // var group7 = L.geoJSON(dataset7, optionsObject);
         
                        
-
                         // Set the time attribute for each group
                         group1.options.time = "1960s";
                         group2.options.time = "1970s";
@@ -153,15 +168,7 @@
                         // Create the layerGroup
                         var multiLayers = L.layerGroup([group1, group2]);
 
-                        // Popups
-                        var optionsObject = {
-                                onEachFeature: onEachFeature
-                            };
-                                    
-                            function onEachFeature (feature, layer) {
-                                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                                layer.bindPopup(content, {closeButton: true});
-                            };
+                        
         
                         // Set the sliderControl options
                         var sliderControl1 = L.control.sliderControl({
