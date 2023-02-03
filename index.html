@@ -26,6 +26,10 @@
     <script src="js/SliderControl.js"></script>
 </head>
 
+<style>
+    
+</style>
+
 <body style="background-color: #0A2B40">
     <section class="py-4 py-xl-5">
         <div class="container h-100">
@@ -57,7 +61,19 @@
                     accessToken: "pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ"
                     }).addTo(map1);
 
-
+                    //Icon?
+                    var publicIcon = L.icon({
+                        iconUrl: 'assets\img\public_pin.PNG',
+                        iconSize: [38, 95],
+                        iconAnchor: [22, 94],
+                        popupAnchor: [-3, -76],
+                    });
+                    var privateIcon = L.icon({
+                        iconUrl: 'assets\img\private_pin.PNG',
+                        iconSize: [38, 95],
+                        iconAnchor: [22, 94],
+                        popupAnchor: [-3, -76],
+                    });
                     //Put data here
                         var dataset1 = [             
                             {
@@ -69,15 +85,9 @@
                                 properties: {
                                     title: "UA-Fayetteville Education Association",
                                     description: "The UA-Fayetteville Education Association (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
-                                    time: "1962"
+                                    time: "1962",
+                                    icon: publicIcon
                                 },
-                                icon: {
-                                    iconUrl: "assets/img/public_pin.png",
-                                    iconSize: [30, 30],
-                                    iconAnchor: [3, 35],
-                                    popupAnchor: [0, -41],
-                                    className: "dot",
-                                    }
                             },
                             {
                                 type: "Feature",
@@ -93,15 +103,15 @@
                         ];
                         var dataset2 = [             
                             {
-                                type: "Feature",
+                                type: 'Feature',
                                 geometry: {
-                                    type: "Point",
+                                    type: 'Point',
                                     coordinates: [-73.9735681752026, 40.7509299516514]
                                 },
                                 properties: {
-                                    title: "Professional Staff Congress",
-                                    description: "The Professional Staff Congress (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.",
-                                    time: "1972"
+                                    title: 'Professional Staff Congress',
+                                    description: 'The Professional Staff Congress (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.',
+                                    time: '1972'
                                 }
                             },
                             {
