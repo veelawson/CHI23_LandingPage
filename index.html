@@ -85,7 +85,7 @@
                                 },
                                 properties: {
                                     title: "UA-Fayetteville Education Association",
-                                    description: "The <a href=\"https://arkansas965.org\" target=\"_blank\"><u>UA-Fayetteville Education Association</u></a> (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
+                                    description: "The <a href=\"https://arkansas965.org\" target=\"_blank\">UA-Fayetteville Education Association</a> (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
                                     time: "1962",
                                     icon: publicIcon
                                 },
@@ -97,7 +97,7 @@
                                     coordinates: [-89.413131232275, 43.07648226405]},
                                 properties: {
                                     title: "Teaching Assistants’ Association",
-                                    description: "The <a href=\"https://taa-madison.org\" target=\"_blank\"><u>Teaching Assistants' Association</u></a> (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
+                                    description: "The <a href=\"https://taa-madison.org\" target=\"_blank\">Teaching Assistants' Association</a> (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
                                     time: "1969",
                                     icon: publicIcon
                                 }
@@ -112,7 +112,7 @@
                                 },
                                 properties: {
                                     title: 'Professional Staff Congress',
-                                    description: 'The <a href=\"https://www.psc-cuny.org/about-us\" target=\"_blank\"><u>Professional Staff Congress</u></a> (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.',
+                                    description: 'The <a href=\"https://www.psc-cuny.org/about-us\" target=\"_blank\">Professional Staff Congress</a> (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.',
                                     time: '1972',
                                     icon: publicIcon
                                 }
@@ -125,12 +125,55 @@
                                 },
                                 properties: {
                                     title: "Rutgers AAUP-AFT",
-                                    description: "The <a href=\"http://www.rutgersaaup.org\" target=\"_blank\"><u>Rutgers AAUP-AFT</u></a> (AAUP/AFT Local 6323) has been organizing graduate workers in the Rutgers and State University of New Jersey system since 1972.",
+                                    description: "The <a href=\"http://www.rutgersaaup.org\" target=\"_blank\">Rutgers AAUP-AFT</a> (AAUP/AFT Local 6323) has been organizing graduate workers in the Rutgers and State University of New Jersey system since 1972.",
                                     time: "1972",
                                     icon: publicIcon
                                 }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-83.7382348309705, 42.2778292488573]
+                                },
+                                properties: {
+                                    title: "Graduate Employees' Organization",
+                                    description: "The <a href=\"https://www.geo3550.org\" target=\"_blank\">Graduate Employees' Organization</a> (AFT Local 3550) has been organizing graduate workers at the University of Michigan since 1974.",
+                                    time: "1974",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-123.072637688581, 44.0446605182791]
+                                },
+                                properties: {
+                                    title: "Graduate Employees' Organization",
+                                    description: "The <a href=\"https://gtff3544.net\" target=\"_blank\">Graduate Teaching Fellows Federation</a> (AFT Local 3554) has been organizing graduate workers at the University of Oregon since 1976.",
+                                    time: "1974",
+                                    icon: publicIcon
+                                }
                             }
-                        ];           
+                        ];  
+                        
+                        var dataset3 = [
+                            {
+                                    type: "Feature",
+                                    geometry: {
+                                        type: "Point",
+                                        coordinates: [-84.2876930294714, 30.422676802929]
+                                    },
+                                    properties: {
+                                        title: "Graduate Assistants United",
+                                        description: "The <a href=\"http://www.uff-famu-gau.org\" target=\"_blank\">Graduate Assistants United</a> (AFT/NEA Local 7463) has been organizing graduate workers at Florida Agricultural & Mechanical University since 1981.",
+                                        time: "1981",
+                                        icon: publicIcon
+                                    }
+                                },
+
+                        ];
   
                         // Popups
                        var optionsObject = {
@@ -148,7 +191,7 @@
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
                         var group2 = L.geoJSON(dataset2, optionsObject);
-                        //var group3 = L.geoJSON(dataset3, optionsObject);
+                        var group3 = L.geoJSON(dataset3, optionsObject);
                        // var group4 = L.geoJSON(dataset4, optionsObject);
                        // var group5 = L.geoJSON(dataset5, optionsObject);
                         //var group6 = L.geoJSON(dataset6, optionsObject);
@@ -158,7 +201,7 @@
                         // Set the time attribute for each group
                         group1.options.time = "1960s";
                         group2.options.time = "1970s";
-                        //group3.options.time = "1980s";
+                        group3.options.time = "1980s";
                        // group4.options.time = "1990s";
                         //group5.options.time = "2000s";
                         //group6.options.time = "2010s";
@@ -166,7 +209,7 @@
         
         
                         // Create the layerGroup
-                        var multiLayers = L.layerGroup([group1, group2]);
+                        var multiLayers = L.layerGroup([group1, group2, group3]);
 
                         
         
