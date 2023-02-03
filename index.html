@@ -66,9 +66,9 @@
                     tileSize: 512,
                     zoomOffset: -1,
                     accessToken: "pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ"
-                    }).addTo(map1); 
-                    
-                        //Put data here
+                    }).addTo(map1);
+
+                    //Put data here
                         var dataset1 = [             
                             {
                                 type: "Feature",
@@ -144,8 +144,8 @@
                                         }
                                 }
                             }
-                        ];
-
+                        ];   
+                        
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
                         var group2 = L.geoJSON(dataset2, optionsObject);
@@ -155,16 +155,7 @@
                         //var group6 = L.geoJSON(dataset6, optionsObject);
                        // var group7 = L.geoJSON(dataset7, optionsObject);
         
-                       // Popups
-                       var optionsObject = {
-                            onEachFeature: onEachFeature
-                        };
-                                
-                        function onEachFeature (feature, layer) {
-                            var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                            layer.setIcon(L.icon(feature.properties.icon));
-                            layer.bindPopup(content, {closeButton: true});
-                        };
+                       
 
                         // Set the time attribute for each group
                         group1.options.time = "1960s";
@@ -178,6 +169,17 @@
         
                         // Create the layerGroup
                         var multiLayers = L.layerGroup([group1, group2]);
+
+                        // Popups
+                       var optionsObject = {
+                            onEachFeature: onEachFeature
+                        };
+                                
+                        function onEachFeature (feature, layer) {
+                            var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                            layer.setIcon(L.icon(feature.properties.icon));
+                            layer.bindPopup(content, {closeButton: true});
+                        };  
         
                         // Set the sliderControl options
                         var sliderControl1 = L.control.sliderControl({
