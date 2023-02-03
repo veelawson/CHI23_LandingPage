@@ -98,11 +98,10 @@
                                 },
                                 properties: {
                                     title: "UA-Fayetteville Education Association",
-                                    link: "https://arkansas965.org/",
                                     description: "The UA-Fayetteville Education Association (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
                                     time: "1962",
                                     icon: {
-                                        iconURL: "assets/public_icon.png",
+                                        iconURL: "assets/public_pin.png",
                                         iconSize: [30, 30],
                                         iconAnchor: [3, 35],
                                         popupAnchor: [0, -41],
@@ -116,11 +115,10 @@
                                 },
                                 properties: {
                                     title: "Teaching Assistants’ Association",
-                                    link: "https://taa-madison.org/",
                                     description: "The Teaching Assistants' Association (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
                                     time: "1969",
                                     icon: {
-                                        iconURL: "assets/public_icon.png",
+                                        iconURL: "assets/public_pin.png",
                                         iconSize: [30, 30],
                                         iconAnchor: [3, 35],
                                         popupAnchor: [0, -41],
@@ -134,15 +132,14 @@
                                 type: "Feature",
                                 geometry: {
                                     type: "Point",
-                                    coordinates: [-73.97356818, 40.7509299516514]
+                                    coordinates: [-73.9735681752026, 40.7509299516514]
                                 },
                                 properties: {
                                     title: "Professional Staff Congress",
-                                    link: "https://www.psc-cuny.org/about-us",
                                     description: "The Professional Staff Congress (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.",
                                     time: "1972",
                                     icon: {
-                                        iconURL: "assets/public_icon.png",
+                                        iconURL: "assets/public_pin.png",
                                         iconSize: [30, 30],
                                         iconAnchor: [3, 35],
                                         popupAnchor: [0, -41],
@@ -156,11 +153,10 @@
                                 },
                                 properties: {
                                     title: "Rutgers AAUP-AFT",
-                                    link: "http://www.rutgersaaup.org",
                                     description: "The Rutgers AAUP-AFT (AAUP/AFT Local 6323) has been organizing graduate workers in the Rutgers and State University of New Jersey system since 1972.",
                                     time: "1972",
                                     icon: {
-                                        iconURL: "assets/public_icon.png",
+                                        iconURL: "assets/public_pin.png",
                                         iconSize: [30, 30],
                                         iconAnchor: [3, 35],
                                         popupAnchor: [0, -41],
@@ -169,21 +165,7 @@
                                 }
                             }
                         ];
-                        
-                        // Popups
-                        var optionsObject = {
-                            onEachFeature: onEachFeature, 
-                            pointToLayer: function (feature, latlng) {
-                                    return L.marker(feature.properties.icon);
-                            }
-                        };
-                                
-                            function onEachFeature (feature, layer) {
-                            var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                            layer.bindPopup(content, {closeButton: true});
-                        };
-        
-                    
+
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
             
@@ -191,40 +173,50 @@
                         var group2 = L.geoJSON(dataset2, optionsObject);
 
                         // Create the third geoJSON layer
-                        var group3 = L.geoJSON(dataset3, optionsObject);
+                        //var group3 = L.geoJSON(dataset3, optionsObject);
         
                         // Create the fourth geoJSON layer
-                        var group4 = L.geoJSON(dataset4, optionsObject);
+                       // var group4 = L.geoJSON(dataset4, optionsObject);
 
                         // Create the fifth geoJSON layer
-                        var group5 = L.geoJSON(dataset5, optionsObject);
+                       // var group5 = L.geoJSON(dataset5, optionsObject);
 
                         // Create the sixth geoJSON layer
-                        var group6 = L.geoJSON(dataset6, optionsObject);
+                        //var group6 = L.geoJSON(dataset6, optionsObject);
 
                         // Create the seventh geoJSON layer
-                        var group7 = L.geoJSON(dataset7, optionsObject);
+                       // var group7 = L.geoJSON(dataset7, optionsObject);
         
+                       // Popups
+                       var optionsObject = {
+                            onEachFeature: onEachFeature
+                        };
+                                
+                        function onEachFeature (feature, layer) {
+                            var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                            layer.setIcon(L.icon(feature.properties.icon));
+                            layer.bindPopup(content, {closeButton: true});
+                        };
+
                         // Set the time attribute for each group
                         group1.options.time = "1960s";
                         group2.options.time = "1970s";
-                        group3.options.time = "1980s";
-                        group4.options.time = "1990s";
-                        group5.options.time = "2000s";
-                        group6.options.time = "2010s";
-                        group7.options.time = "2020s";
+                       // group3.options.time = "1980s";
+                       // group4.options.time = "1990s";
+                        //group5.options.time = "2000s";
+                        //group6.options.time = "2010s";
+                        //group7.options.time = "2020s";
         
         
                         // Create the layerGroup
-                        var multiLayers = L.layerGroup([group1, group2, group3, group4, group5, group6, group7]);
+                        var multiLayers = L.layerGroup([group1, group2]);
         
                         // Set the sliderControl options
                         var sliderControl1 = L.control.sliderControl({
                             layer: multiLayers, //REQUIRED
                             alwaysShowDate: true,
                             showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
-                            showPopups: false, // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
-                            position: bottomleft
+                            showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
                         });
         
                         // Add the slider to the map
