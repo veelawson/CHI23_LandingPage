@@ -86,8 +86,7 @@
                                 properties: {
                                     title: "UA-Fayetteville Education Association",
                                     description: "The UA-Fayetteville Education Association (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
-                                    time: "1962",
-                                    icon: publicIcon
+                                    time: "1962"
                                 },
                             },
                             {
@@ -102,8 +101,8 @@
                                     icon: {
                                         iconUrl: "assets/public.png",
                                         iconSize: [30, 30],
-                                        iconAnchor: [3, 35],
-                                        popupAnchor: [0, -41],
+                                        iconAnchor: [15, 15],
+                                        popupAnchor: [0, -10],
                                         className: "dot"
                                         }
                                 }
@@ -139,9 +138,9 @@
                         // Popups
                        var optionsObject = {
                                 onEachFeature: onEachFeature,
-                                pointToLayer: function (feature, latlng) {
-                                return L.marker(latlng, {icon: publicIcon});
-                                }
+                                //pointToLayer: function (feature, latlng) {
+                                //return L.marker(latlng, {icon: publicIcon});
+                                //}
                             };
                                     
                             function onEachFeature (feature, layer) {
