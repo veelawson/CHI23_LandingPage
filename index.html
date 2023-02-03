@@ -63,16 +63,16 @@
 
                     //Icon?
                     var publicIcon = L.icon({
-                        iconUrl: 'public.png',
-                        iconSize: [38, 95],
-                        iconAnchor: [22, 94],
-                        popupAnchor: [-3, -76],
+                        iconUrl: 'assets/public.png',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15],
+                        popupAnchor: [0, -10],
                     });
                     var privateIcon = L.icon({
-                        iconUrl: 'private.png',
-                        iconSize: [38, 95],
-                        iconAnchor: [22, 94],
-                        popupAnchor: [-3, -76],
+                        iconUrl: 'assets/private.png',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15],
+                        popupAnchor: [0, -10],
                     });
 
                     //Put data here
@@ -100,7 +100,7 @@
                                     description: "The Teaching Assistants' Association (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
                                     time: "1969",
                                     icon: {
-                                        iconUrl: "/assets/public.png",
+                                        iconUrl: "assets/public.png",
                                         iconSize: [30, 30],
                                         iconAnchor: [3, 35],
                                         popupAnchor: [0, -41],
@@ -138,7 +138,10 @@
   
                         // Popups
                        var optionsObject = {
-                                onEachFeature: onEachFeature
+                                onEachFeature: onEachFeature,
+                                pointToLayer: function (feature, latlng) {
+                                return L.marker(latlng, {icon: publicIcon});
+                                }
                             };
                                     
                             function onEachFeature (feature, layer) {
