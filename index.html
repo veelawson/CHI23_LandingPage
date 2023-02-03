@@ -86,7 +86,8 @@
                                 properties: {
                                     title: "UA-Fayetteville Education Association",
                                     description: "The UA-Fayetteville Education Association (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
-                                    time: "1962"
+                                    time: "1962",
+                                    icon: publicIcon
                                 },
                             },
                             {
@@ -98,13 +99,7 @@
                                     title: "Teaching Assistants’ Association",
                                     description: "The Teaching Assistants' Association (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
                                     time: "1969",
-                                    icon: {
-                                        iconUrl: "assets/public.png",
-                                        iconSize: [30, 30],
-                                        iconAnchor: [15, 15],
-                                        popupAnchor: [0, -10],
-                                        className: "dot"
-                                        }
+                                    icon: publicIcon
                                 }
                             }
                         ];
@@ -118,7 +113,8 @@
                                 properties: {
                                     title: 'Professional Staff Congress',
                                     description: 'The Professional Staff Congress (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.',
-                                    time: '1972'
+                                    time: '1972',
+                                    icon: publicIcon
                                 }
                             },
                             {
@@ -130,7 +126,8 @@
                                 properties: {
                                     title: "Rutgers AAUP-AFT",
                                     description: "The Rutgers AAUP-AFT (AAUP/AFT Local 6323) has been organizing graduate workers in the Rutgers and State University of New Jersey system since 1972.",
-                                    time: "1972"
+                                    time: "1972",
+                                    icon: publicIcon
                                 }
                             }
                         ];           
@@ -138,9 +135,9 @@
                         // Popups
                        var optionsObject = {
                                 onEachFeature: onEachFeature,
-                                //pointToLayer: function (feature, latlng) {
-                                //return L.marker(latlng, {icon: publicIcon});
-                                //}
+                                pointToLayer: function (feature, latlng) {
+                                return L.marker(latlng, {icon: feature.properties.icon});
+                                }
                             };
                                     
                             function onEachFeature (feature, layer) {
