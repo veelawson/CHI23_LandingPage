@@ -78,7 +78,7 @@
         <div class="container" style="min-width: 100%;max-width: 100%;padding: 5%;min-height: 100%;max-height: 100%;">
             <div id="map">Error.</div>
                 <script>
-                    var map1 = L.map("map").setView([40.61283794719691, -56.52796590302782], 4);
+                    var map1 = L.map("map").setView([40.03392176804794, -99.08158185738218], 4);
                     L.tileLayer("https://api.mapbox.com/styles/v1/lawsonv/clde33d44000501p4nnasamsm/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ", {
                     attribution: "Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/''>Mapbox</a>",
                     maxZoom: 18,
@@ -88,35 +88,93 @@
                     accessToken: "pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ"
                     }).addTo(map1); 
                     
-                    //Custom Marker 
-                    var spyglass = L.icon({
-                        iconUrl: "assets/img/Spyglass.png",
-                        iconSize:     [38, 38],
-                        iconAnchor:   [22, 38], // point of the icon which will correspond to marker's location
-                        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-                        });          
-                        
                         //Put data here
                         var dataset1 = [             
                             {
                                 type: "Feature",
                                 geometry: {
                                     type: "Point",
-                                    coordinates: [-0.076132, 51.508530]
+                                    coordinates: [-94.1749329330225, 36.0684640014385]
                                 },
                                 properties: {
-                                    title: "Sir Francis Walsingham (c. 1532 - 6 April 1590)",
-                                    description: "<img src='https://upload.wikimedia.org/wikipedia/commons/3/38/St_Katharine%27s_%5E_Wapping%2C_London%2C_UK_-_panoramio_%2824%29.jpg'> <br> <b>Location: London, England</b> <br> As Secretary of State under Queen Elizabeth I, <a href='https://en.wikipedia.org/wiki/Francis_Walsingham'>Sir Francis Walsingham</a> used an extensive network of informants to identify and round up conspirators against the queen, particularly Catholics, and was involved in the entrapment and execution of Mary Queen of Scots, who was imprisoned in the <a href='https://www.hrp.org.uk/tower-of-london/''>Tower of London</a>.",
-                                    time: "1532"
+                                    title: "UA-Fayetteville Education Association",
+                                    link: "https://arkansas965.org/",
+                                    description: "The UA-Fayetteville Education Association (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
+                                    time: "1962",
+                                    icon: {
+                                        iconURL: "assets/public_icon.png",
+                                        iconSize: [30, 30],
+                                        iconAnchor: [3, 35],
+                                        popupAnchor: [0, -41],
+                                        className: "dot"
+                                        }
+                                },
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-89.413131232275, 43.07648226405]
+                                },
+                                properties: {
+                                    title: "Teaching Assistants’ Association",
+                                    link: "https://taa-madison.org/",
+                                    description: "The Teaching Assistants' Association (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
+                                    time: "1969",
+                                    icon: {
+                                        iconURL: "assets/public_icon.png",
+                                        iconSize: [30, 30],
+                                        iconAnchor: [3, 35],
+                                        popupAnchor: [0, -41],
+                                        className: "dot"
+                                        }
                                 }
                             }
                         ];
-        
-                
+                        var dataset2 = [             
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-73.97356818, 40.7509299516514]
+                                },
+                                properties: {
+                                    title: "Professional Staff Congress",
+                                    link: "https://www.psc-cuny.org/about-us",
+                                    description: "The Professional Staff Congress (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.",
+                                    time: "1972",
+                                    icon: {
+                                        iconURL: "assets/public_icon.png",
+                                        iconSize: [30, 30],
+                                        iconAnchor: [3, 35],
+                                        popupAnchor: [0, -41],
+                                        className: "dot"
+                                        }
+                                },
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-74.1741461868415, 40.7416901505231]
+                                },
+                                properties: {
+                                    title: "Rutgers AAUP-AFT",
+                                    link: "http://www.rutgersaaup.org",
+                                    description: "The Rutgers AAUP-AFT (AAUP/AFT Local 6323) has been organizing graduate workers in the Rutgers and State University of New Jersey system since 1972.",
+                                    time: "1972",
+                                    icon: {
+                                        iconURL: "assets/public_icon.png",
+                                        iconSize: [30, 30],
+                                        iconAnchor: [3, 35],
+                                        popupAnchor: [0, -41],
+                                        className: "dot"
+                                        }
+                                }
+                            }
+                        ];
+                        
+                        // Popups
                         var optionsObject = {
                             onEachFeature: onEachFeature, 
                             pointToLayer: function (feature, latlng) {
-                                    return L.marker(latlng, {icon: spyglass});
+                                    return L.marker(feature.properties.icon);
                             }
                         };
                                 
@@ -125,19 +183,27 @@
                             layer.bindPopup(content, {closeButton: true});
                         };
         
-                
+                    
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
             
-                        // Create the second geoJSON layer from external file
-                       // $.getJSON("data/dataset2.json", function(json) {
-                        var group2 = L.geoJSON(json, optionsObject);
-        
+                        // Create the second geoJSON layer 
+                        var group2 = L.geoJSON(dataset2, optionsObject);
+
                         // Create the third geoJSON layer
                         var group3 = L.geoJSON(dataset3, optionsObject);
         
                         // Create the fourth geoJSON layer
                         var group4 = L.geoJSON(dataset4, optionsObject);
+
+                        // Create the fifth geoJSON layer
+                        var group5 = L.geoJSON(dataset5, optionsObject);
+
+                        // Create the sixth geoJSON layer
+                        var group6 = L.geoJSON(dataset6, optionsObject);
+
+                        // Create the seventh geoJSON layer
+                        var group7 = L.geoJSON(dataset7, optionsObject);
         
                         // Set the time attribute for each group
                         group1.options.time = "1960s";
@@ -157,7 +223,8 @@
                             layer: multiLayers, //REQUIRED
                             alwaysShowDate: true,
                             showAllPopups: false, // to show all popups, instead of one, same as popup option "autoClose: false"
-                            showPopups: false // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
+                            showPopups: false, // to set it so, when a marker is generated by the slider, its popup doesn't automatically display
+                            position: bottomleft
                         });
         
                         // Add the slider to the map
@@ -165,6 +232,7 @@
         
                         // Initialize the slider
                         sliderControl1.startSlider();
+
                 </script>
         </div>
    </section>
