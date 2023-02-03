@@ -24,18 +24,6 @@
 
     <!--Leaflet Time-Slider module js adapted from Brian Geyer (https://github.com/geyerbri) with thanks; find maintained version at https://github.com/geyerbri/LeafletSlider-->
     <script src="js/SliderControl.js"></script>
-
-    <style>
-        .mapboxgl-popup {
-            min-width: 1200px;
-        }
-
-        .mapboxgl-popup-content {
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            min-width: 1200px;
-        }
-    </style>
 </head>
 
 <body style="background-color: #0A2B40">
@@ -53,6 +41,7 @@
             </div>
         </div>
     </section>
+    
     <!--MiniMap-->
     <section>
         <div class="container" style="min-width: 100%;max-width: 100%;padding: 5%;min-height: 100%;max-height: 100%;">
@@ -68,6 +57,7 @@
                     accessToken: "pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ"
                     }).addTo(map1);
 
+
                     //Put data here
                         var dataset1 = [             
                             {
@@ -79,31 +69,25 @@
                                 properties: {
                                     title: "UA-Fayetteville Education Association",
                                     description: "The UA-Fayetteville Education Association (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
-                                    time: "1962",
-                                    icon: {
-                                        iconURL: "assets/public_pin.png",
-                                        iconSize: [30, 30],
-                                        iconAnchor: [3, 35],
-                                        popupAnchor: [0, -41],
-                                        className: "dot"
-                                        }
+                                    time: "1962"
                                 },
+                                icon: {
+                                    iconUrl: "assets/img/public_pin.png",
+                                    iconSize: [30, 30],
+                                    iconAnchor: [3, 35],
+                                    popupAnchor: [0, -41],
+                                    className: "dot",
+                                    }
+                            },
+                            {
                                 type: "Feature",
                                 geometry: {
                                     type: "Point",
-                                    coordinates: [-89.413131232275, 43.07648226405]
-                                },
+                                    coordinates: [-89.413131232275, 43.07648226405]},
                                 properties: {
                                     title: "Teaching Assistants’ Association",
                                     description: "The Teaching Assistants' Association (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
-                                    time: "1969",
-                                    icon: {
-                                        iconURL: "assets/public_pin.png",
-                                        iconSize: [30, 30],
-                                        iconAnchor: [3, 35],
-                                        popupAnchor: [0, -41],
-                                        className: "dot"
-                                        }
+                                    time: "1969"
                                 }
                             }
                         ];
@@ -117,15 +101,10 @@
                                 properties: {
                                     title: "Professional Staff Congress",
                                     description: "The Professional Staff Congress (AFT/NEA/AAUP Local 2334) has been organizing graduate workers in the City University of New York system since 1972.",
-                                    time: "1972",
-                                    icon: {
-                                        iconURL: "assets/public_pin.png",
-                                        iconSize: [30, 30],
-                                        iconAnchor: [3, 35],
-                                        popupAnchor: [0, -41],
-                                        className: "dot"
-                                        }
-                                },
+                                    time: "1972"
+                                }
+                            },
+                            {
                                 type: "Feature",
                                 geometry: {
                                     type: "Point",
@@ -134,18 +113,12 @@
                                 properties: {
                                     title: "Rutgers AAUP-AFT",
                                     description: "The Rutgers AAUP-AFT (AAUP/AFT Local 6323) has been organizing graduate workers in the Rutgers and State University of New Jersey system since 1972.",
-                                    time: "1972",
-                                    icon: {
-                                        iconURL: "assets/public_pin.png",
-                                        iconSize: [30, 30],
-                                        iconAnchor: [3, 35],
-                                        popupAnchor: [0, -41],
-                                        className: "dot"
-                                        }
+                                    time: "1972"
                                 }
                             }
-                        ];   
-                        
+                        ];           
+  
+
                         // Create the first geoJSON layer
                         var group1 = L.geoJSON(dataset1, optionsObject);
                         var group2 = L.geoJSON(dataset2, optionsObject);
@@ -160,7 +133,7 @@
                         // Set the time attribute for each group
                         group1.options.time = "1960s";
                         group2.options.time = "1970s";
-                       // group3.options.time = "1980s";
+                        //group3.options.time = "1980s";
                        // group4.options.time = "1990s";
                         //group5.options.time = "2000s";
                         //group6.options.time = "2010s";
@@ -171,15 +144,14 @@
                         var multiLayers = L.layerGroup([group1, group2]);
 
                         // Popups
-                       var optionsObject = {
-                            onEachFeature: onEachFeature
-                        };
-                                
-                        function onEachFeature (feature, layer) {
-                            var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
-                            layer.setIcon(L.icon(feature.properties.icon));
-                            layer.bindPopup(content, {closeButton: true});
-                        };  
+                        var optionsObject = {
+                                onEachFeature: onEachFeature
+                            };
+                                    
+                            function onEachFeature (feature, layer) {
+                                var content = "<div style='clear: both'></div><div><h4>" + feature.properties.title + "</h4><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                                layer.bindPopup(content, {closeButton: true});
+                            };
         
                         // Set the sliderControl options
                         var sliderControl1 = L.control.sliderControl({
