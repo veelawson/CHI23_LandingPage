@@ -160,20 +160,127 @@
                         
                         var dataset3 = [
                             {
-                                    type: "Feature",
-                                    geometry: {
-                                        type: "Point",
-                                        coordinates: [-84.2876930294714, 30.422676802929]
-                                    },
-                                    properties: {
-                                        title: "Graduate Assistants United",
-                                        description: "The <a href=\"http://www.uff-famu-gau.org\" target=\"_blank\">Graduate Assistants United</a> (AFT/NEA Local 7463) has been organizing graduate workers at Florida Agricultural & Mechanical University since 1981.",
-                                        time: "1981",
-                                        icon: publicIcon
-                                    }
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-84.2876930294714, 30.422676802929]
                                 },
+                                properties: {
+                                    title: "Graduate Assistants United",
+                                    description: "The <a href=\"http://www.uff-famu-gau.org\" target=\"_blank\">Graduate Assistants United</a> (AFT/NEA Local 7463) has been organizing graduate workers at Florida Agricultural & Mechanical University since 1981.",
+                                    time: "1981",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-82.41376807186, 28.0584474508199]
+                                },
+                                properties: {
+                                    title: "Graduate Assistants United",
+                                    description: "The <a href=\"https://www.facebook.com/usfgraduateassistantsunited\" target=\"_blank\">Graduate Assistants United</a> (AFT/NEA Local 7463) has been organizing graduate workers at the University of South Florida since 1981.",
+                                    time: "1981",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-82.3549409313464, 29.6434459892572]
+                                },
+                                properties: {
+                                    title: "Graduate Assistants United",
+                                    description: "The <a href=\"https://www.ufgau.org\" target=\"_blank\">Graduate Assistants United</a> (AFT/NEA Local 7463) has been organizing graduate workers at the University of Florida since 1981.",
+                                    time: "1981",
+                                    icon: publicIcon
+                                }
+                            },
 
                         ];
+                        var dataset4 = [
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-72.5301802481643, 42.3865061966664]
+                                },
+                                properties: {
+                                    title: "Graduate Employee Organization",
+                                    description: "The <a href=\"https://www.geouaw.org\" target=\"_blank\">Graduate Employee Organization</a> (UAW Local 2322) has been organizing graduate workers at the University of Massachusetts Amherst since 1990.",
+                                    time: "1990",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-71.3247915039745, 42.6552271173311]
+                                },
+                                properties: {
+                                    title: "Graduate Employee Organization",
+                                    description: "The <a href=\"https://sites.google.com/site/geoumasslowell\" target=\"_blank\">Graduate Employee Organization</a> (UAW Local 1596) has been organizing graduate workers at the University of Massachusetts Lowell since 1993.",
+                                    time: "1993",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-73.7496317351541, 42.6481788826708]
+                                },
+                                properties: {
+                                    title: "Graduate Student Employees Union",
+                                    description: "The <a href=\"https://cwa1104gseu.com\" target=\"_blank\">Graduate Student Employees Union</a> (CWA Local 1104) has been organizing graduate workers in the State University of New York system since 1993.",
+                                    time: "1993",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-95.2557961022442, 38.9543355363123]
+                                },
+                                properties: {
+                                    title: "Graduate Teaching Assistants' Coalition",
+                                    description: "The <a href=\"https://gtacunion.org\" target=\"_blank\">Graduate Teaching Assistants' Coalition</a> (AFT Local 4565) has been organizing graduate workers at the University of Kansas since 1995.",
+                                    time: "1995",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-91.5549771021553, 41.6626917488334]
+                                },
+                                properties: {
+                                    title: "Campaign to Organize Graduate Students",
+                                    description: "The <a href=\"https://cogs.org\" target=\"_blank\">Campaign to Organize Graduate Students</a> (UE Local 896) has been organizing graduate workers at the University of Iowa since 1996.",
+                                    time: "1996",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-83.066739321182, 42.3589405807874]
+                                },
+                                properties: {
+                                    title: "Graduate Employees Organizing Committee",
+                                    description: "The <a href=\"https://www.geocwsu.com\" target=\"_blank\">Graduate Employees Organizing Committee</a> (AFT Local 6123) has been organizing graduate workers at Wayne State University since 1998.",
+                                    time: "1998",
+                                    icon: publicIcon
+                                }
+                            },
+
+                        ]
   
                         // Popups
                        var optionsObject = {
@@ -192,7 +299,7 @@
                         var group1 = L.geoJSON(dataset1, optionsObject);
                         var group2 = L.geoJSON(dataset2, optionsObject);
                         var group3 = L.geoJSON(dataset3, optionsObject);
-                       // var group4 = L.geoJSON(dataset4, optionsObject);
+                        var group4 = L.geoJSON(dataset4, optionsObject);
                        // var group5 = L.geoJSON(dataset5, optionsObject);
                         //var group6 = L.geoJSON(dataset6, optionsObject);
                        // var group7 = L.geoJSON(dataset7, optionsObject);
@@ -202,14 +309,14 @@
                         group1.options.time = "1960s";
                         group2.options.time = "1970s";
                         group3.options.time = "1980s";
-                       // group4.options.time = "1990s";
+                        group4.options.time = "1990s";
                         //group5.options.time = "2000s";
                         //group6.options.time = "2010s";
                         //group7.options.time = "2020s";
         
         
                         // Create the layerGroup
-                        var multiLayers = L.layerGroup([group1, group2, group3]);
+                        var multiLayers = L.layerGroup([group1, group2, group3, group4]);
 
                         
         
