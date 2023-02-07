@@ -529,6 +529,100 @@
                                 }
                             },   
                         ];
+
+                        var dataset6 = [
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-74.1794083328751, 40.7420941883505]
+                                },
+                                properties: {
+                                    title: "United Council of Academics at NJIT",
+                                    description: "The <a href=\"http://ucanaft.org\" target=\"_blank\">United Council of Academics at NJIT</a> (AAUP/AFT Local 6323) has been organizing graduate workers at the New Jersey Institute of Technology since 2010.",
+                                    time: "2010",
+                                    icon: publicIcon
+                                }
+                            }, 
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-111.05471766154, 45.6671799350263]
+                                },
+                                properties: {
+                                    title: "Graduate Employee Organization",
+                                    description: "The <a href=\"https://www.msugeo.org\" target=\"_blank\">Graduate Employee Organization</a> (AFT/NEA Local 7756) has been organizing graduate workers at Montana State University since 2012.",
+                                    time: "2012",
+                                    icon: publicIcon
+                                }
+                            }, 
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-76.9425650310793, 38.9867264728023]
+                                },
+                                properties: {
+                                    title: "Fearless Student Employees",
+                                    description: "The <a href=\"https://www.facebook.com/fseumd\" target=\"_blank\">Fearless Student Employees</a> (Independent) have been organizing graduate workers at the University of Maryland College Park since 2012.",
+                                    time: "2012",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-72.2540341463311, 41.8075334536831]
+                                },
+                                properties: {
+                                    title: "Graduate Employee Union",
+                                    description: "The <a href=\"http://uconngradunion.org\" target=\"_blank\">Graduate Employee Union</a> (UAW Local 6950) has been organizing graduate workers at the University of Connecticut since 2014.",
+                                    time: "2014",
+                                    icon: publicIcon
+                                }
+                            },
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-76.473545617473, 42.4532512785205]
+                                },
+                                properties: {
+                                    title: "Cornell Graduate Students United",
+                                    description: "The <a href=\"https://cornellgradunion.org\" target=\"_blank\">Cornell Graduate Students United</a> (AFT/NEA) have been organizing graduate workers at Cornell University since 2014.",
+                                    time: "2014",
+                                    icon: privateIcon
+                                }
+                            },  
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-76.6205606175768, 39.3297021066526]
+                                },
+                                properties: {
+                                    title: "Teachers and Researchers United",
+                                    description: "The <a href=\"http://trujhu.org\" target=\"_blank\">Teachers and Researchers United</a> (Independent) have been organizing graduate workers at Johns Hopkins University since 2014.",
+                                    time: "2014",
+                                    icon: privateIcon
+                                }
+                            }, 
+                            {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-92.3278018752615, 38.9401554671055]
+                                },
+                                properties: {
+                                    title: "Coalition of Graduate Workers",
+                                    description: "The <a href=\"https://cgwmissouri.org\" target=\"_blank\">Coalition of Graduate Workers</a> (NEA) has been organizing graduate workers at the University of Missouri since 2015.",
+                                    time: "2015",
+                                    icon: publicIcon
+                                }
+                            },  
+                        ]
   
                         // Popups
                        var optionsObject = {
@@ -549,7 +643,7 @@
                         var group3 = L.geoJSON(dataset3, optionsObject);
                         var group4 = L.geoJSON(dataset4, optionsObject);
                         var group5 = L.geoJSON(dataset5, optionsObject);
-                        //var group6 = L.geoJSON(dataset6, optionsObject);
+                        var group6 = L.geoJSON(dataset6, optionsObject);
                        // var group7 = L.geoJSON(dataset7, optionsObject);
         
                        
@@ -559,12 +653,12 @@
                         group3.options.time = "1980s";
                         group4.options.time = "1990s";
                         group5.options.time = "2000s";
-                        //group6.options.time = "2010s";
+                        group6.options.time = "2010s";
                         //group7.options.time = "2020s";
         
         
                         // Create the layerGroup
-                        var multiLayers = L.layerGroup([group1, group2, group3, group4, group5]);
+                        var multiLayers = L.layerGroup([group1, group2, group3, group4, group5, group6]);
 
                         
         
