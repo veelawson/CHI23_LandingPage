@@ -53,7 +53,7 @@
                 <script>
                     var map1 = L.map("map").setView([40.03392176804794, -99.08158185738218], 4);
                     L.tileLayer("https://api.mapbox.com/styles/v1/lawsonv/clde33d44000501p4nnasamsm/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ", {
-                    attribution: "Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/''>Mapbox</a>",
+                    attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/''>Mapbox</a>",
                     maxZoom: 18,
                     id: "mapbox/dark-v10",
                     tileSize: 512,
@@ -1207,6 +1207,22 @@
                                     icon: publicIcon
                                 }
                             },
+                        ];
+
+                        var dataset7 = [
+                        {
+                                type: "Feature",
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [-82.3957933021982, 40.3759639929074]
+                                },
+                                properties: {
+                                    title: "Kenyon Student Worker Organizing Committee",
+                                    description: "The <a href=\"https://www.kswoc.org\" target=\"_blank\">Kenyon Student Worker Organizing Committee</a> (UE Local 712) has been organizing graduate workers at Kenyon College since 2020.",
+                                    time: "2019",
+                                    icon: privateIcon
+                                }
+                            }, 
                         ]
   
                         // Popups
@@ -1218,7 +1234,7 @@
                             };
                                     
                             function onEachFeature (feature, layer) {
-                                var content = "<div style='clear: both'></div><div><h5>" + feature.properties.title + "</h5><p>" + feature.properties.time + "</p><p>" + feature.properties.description + "</p></div>";
+                                var content = "<div><h3 style=\"font-family: Georgia, 'Times New Roman', Times, serif;\">" + feature.properties.title + "</h3><h5>" + feature.properties.time + "</h5><p style=\"font-family: Arial, Helvetica, sans-serif;\">" + feature.properties.description + "</p></div>";
                                 layer.bindPopup(content, {closeButton: true});
                             };
 
@@ -1229,7 +1245,7 @@
                         var group4 = L.geoJSON(dataset4, optionsObject);
                         var group5 = L.geoJSON(dataset5, optionsObject);
                         var group6 = L.geoJSON(dataset6, optionsObject);
-                       // var group7 = L.geoJSON(dataset7, optionsObject);
+                        var group7 = L.geoJSON(dataset7, optionsObject);
         
                        
                         // Set the time attribute for each group
@@ -1239,11 +1255,11 @@
                         group4.options.time = "1990s";
                         group5.options.time = "2000s";
                         group6.options.time = "2010s";
-                        //group7.options.time = "2020s";
+                        group7.options.time = "2020s";
         
         
                         // Create the layerGroup
-                        var multiLayers = L.layerGroup([group1, group2, group3, group4, group5, group6]);
+                        var multiLayers = L.layerGroup([group1, group2, group3, group4, group5, group6, group7]);
 
                         
         
