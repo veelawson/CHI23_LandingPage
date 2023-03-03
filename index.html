@@ -1543,11 +1543,12 @@
                                 sliderControl1.startSlider();
 
                                 //Legend
-                                var legendControl1 = L.control.Legend({
+                                L.control.Legend({
                                     position: "bottomleft",
                                     collapsed: false,
                                     symbolWidth: 24,
                                     opacity: 1,
+                                    column: 1,
                                     legends: [{
                                         label: "Public Universities",
                                         type: "image",
@@ -1558,11 +1559,7 @@
                                         type: "image",
                                         url: "assets/private.png",
                                     }]
-                                });
-
-                                map1.addControl(legendControl1);
-                                
-                                legendControl1.startLegend();
+                                }).addTo(map1);
 
                         </script>
                 </div>
@@ -1574,7 +1571,10 @@
     <div class="container-fluid" id="timeline">
         <div class="row pt-5">
             <div class="col-xl-8">
-                <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1EETjNQCxyrH-NE0MRrBKkuAMgLckGAm_X0HbLdutc0g&font=Georgia-Helvetica&lang=en&initial_zoom=2&height=700' width='100%' height='700' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+                <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1EETjNQCxyrH-NE0MRrBKkuAMgLckGAm_X0HbLdutc0g&font=Georgia-Helvetica&lang=en&initial_zoom=2&height=750' width='100%' height='750' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+            </div>
+            <div class="col">
+                <p class="align-center">This text should be centered vertically but isnt. >:(</p>
             </div>
         </div>
     </div>
