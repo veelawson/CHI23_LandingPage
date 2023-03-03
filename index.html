@@ -26,10 +26,6 @@
     <script src="js/SliderControl.js"></script>
 </head>
 
-<style>
-    
-</style>
-
 <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg" id="navbar">
@@ -72,6 +68,15 @@
         </div>
     </section>
     
+    <!--Back to top button-->
+        <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+        </button>
+
+
     <!--Narrative and MiniMap-->
     <section>
         <div class="container-fluid" id="narrative">
@@ -92,7 +97,7 @@
                         <script>
                             var map1 = L.map("map").setView([40.03392176804794, -99.08158185738218], 4);
                             L.tileLayer("https://api.mapbox.com/styles/v1/lawsonv/clde33d44000501p4nnasamsm/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ", {
-                            attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/''>Mapbox</a>",
+                            attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'style='color: #2E4959'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'style='color: #2E4959'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/'style='color: #2E4959'>Mapbox</a>",
                             maxZoom: 18,
                             id: "mapbox/dark-v10",
                             tileSize: 512,
@@ -1486,7 +1491,7 @@
                                 ]
         
                                 // Popups
-                            var optionsObject = {
+                                var optionsObject = {
                                         onEachFeature: onEachFeature,
                                         pointToLayer: function (feature, latlng) {
                                         return L.marker(latlng, {icon: feature.properties.icon});
@@ -1494,7 +1499,7 @@
                                     };
                                             
                                     function onEachFeature (feature, layer) {
-                                        var content = "<div><h3 style=\"font-family: Georgia, 'Times New Roman', Times, serif;\">" + feature.properties.title + "</h3><h5>" + feature.properties.time + "</h5><p style=\"font-family: Arial, Helvetica, sans-serif;\">" + feature.properties.description + "</p></div>";
+                                        var content = "<div><h3 style=\"font-family: Georgia, 'Times New Roman', Times, serif;\">" + feature.properties.title + "</h3><h5>" + feature.properties.time + "</h5><p style=\"font-family: Arial, Helvetica, sans-serif; color: #0D0D0D;\">" + feature.properties.description + "</p></div>";
                                         layer.bindPopup(content, {closeButton: true});
                                     };
 
@@ -1536,6 +1541,28 @@
                 
                                 // Initialize the slider
                                 sliderControl1.startSlider();
+
+                                //Legend
+                                var legendControl1 = L.control.Legend({
+                                    position: "bottomleft",
+                                    collapsed: false,
+                                    symbolWidth: 24,
+                                    opacity: 1,
+                                    legends: [{
+                                        label: "Public Universities",
+                                        type: "image",
+                                        url: "assets/public.png",
+                                    },
+                                    {
+                                        label: "Private Universities",
+                                        type: "image",
+                                        url: "assets/private.png",
+                                    }]
+                                });
+
+                                map1.addControl(legendControl1);
+                                
+                                legendControl1.startLegend();
 
                         </script>
                 </div>
