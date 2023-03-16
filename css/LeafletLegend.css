@@ -67,10 +67,10 @@
     display: none;
   }
   
-  .leaflet-legend-expanded .leaflet-legend-contents {
+  /*.leaflet-legend-expanded .leaflet-legend-contents {
     display: block;
     padding: 6px 15px 6px 6px;
-  }
+  }*/
   
   .leaflet-legend-contents img {
     position: absolute;
