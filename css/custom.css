@@ -100,6 +100,11 @@ a:visited {
     height: 85vh;
 }
 
+#maptitle {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6D80A6;
+}
+
 /*--------------------------------------------------------------
 # Timeline Section
 --------------------------------------------------------------*/
