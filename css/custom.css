@@ -3,32 +3,36 @@ body {
 }
 
 p {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #cfc9c7;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #F26BCE;
 }
 
 h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #F26BCE;
 }
 
 h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #F4B5E3;
 }
 
 h4 {
   font-family:Georgia, 'Times New Roman', Times, serif;
+  color: #F4B5E3;
 }
 
 a:link {
-    color: #F21B2D;
+    color: #dfa6db;
 }
 
 a:visited {
-    color: #A60321;
+    color: #c888c4;
 }
 
 /*--------------------------------------------------------------
@@ -121,33 +125,7 @@ a:visited {
   color: #6D80A6;
 }
 
-/*--------------------------------------------------------------
-# Timeline Section
---------------------------------------------------------------*/
- #timeline {
-    background-color:#3c163a;
-} 
 
-#timeline a:link {
-  color:#bb63a4;
-  ;
-}
-
-#timeline a:visited {
-  color:#c955aa;
-}
-
-#timeline h2 {
-  color: white;
-}
-
-#timeline h4 {
-  color: #f47fd5;
-}
-
-#timeline p {
-  color: #e7b2e3;
-}
 /*--------------------------------------------------------------
 # Pivot Section
 --------------------------------------------------------------*/
