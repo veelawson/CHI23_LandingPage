@@ -1695,7 +1695,7 @@
                 <script>
                     var map2 = L.map("map2", {scrollWheelZoom: false}).setView([40.03392176804794, -99.08158185738218], 3.75);
                     L.tileLayer("https://api.mapbox.com/styles/v1/lawsonv/clde33d44000501p4nnasamsm/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ", {
-                    attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'style='color: #2E4959'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'style='color: #2E4959'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/'style='color: #2E4959'>Mapbox</a>",
+                    attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'style='color: #2E4959'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'style='color: #2E4959'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/'style='color: #2E4959'>Mapbox</a>, Icons by <a href='https://www.flaticon.com/free-icons/protest'>Freepik - Flaticon</a>",
                     maxZoom: 18,
                     minZoom: 3.75,
                     id: "mapbox/dark-v10",
@@ -1705,14 +1705,26 @@
                     }).addTo(map2);
 
                     //Icon
-                    var publicIcon = L.icon({
-                        iconUrl: 'assets/public.png',
+                    var graduateIcon = L.icon({
+                        iconUrl: 'assets/graduateStrike.png',
                         iconSize: [30, 30],
                         iconAnchor: [15, 15],
                         popupAnchor: [0, -10],
                     });
-                    var privateIcon = L.icon({
-                        iconUrl: 'assets/private.png',
+                    var facultyIcon = L.icon({
+                        iconUrl: 'assets/facultyStrike.png',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15],
+                        popupAnchor: [0, -10],
+                    });
+                    var undergraduateIcon = L.icon({
+                        iconUrl: 'assets/undergraduateStrike.png',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 15],
+                        popupAnchor: [0, -10],
+                    });
+                    var combinedIcon = L.icon({
+                        iconUrl: 'assets/combinedStrike.png',
                         iconSize: [30, 30],
                         iconAnchor: [15, 15],
                         popupAnchor: [0, -10],
@@ -1724,13 +1736,13 @@
                                             type: "Feature",
                                             geometry: {
                                                 type: "Point",
-                                                coordinates: [-94.1749329330225, 36.0684640014385]
+                                                coordinates: [-89.413131232275, 43.07648226405]
                                             },
                                             properties: {
-                                                title: "UA-Fayetteville Education Association",
-                                                description: "The <a href=\"https://arkansas965.org\" target=\"_blank\">UA-Fayetteville Education Association</a> (NEA Local 965) has been organizing graduate workers at the University of Arkansas Fayetteville since 1962.",
-                                                time: "1962",
-                                                icon: publicIcon
+                                                title: "<a href=\"https://taa-madison.org/history\" target=\"_blank\">TAA Recognition Strike</a>",
+                                                description: "In 1970, 800 workers with the Teaching Assistants Association at the Unviersity of Wisconsin struck for 24 days after university adminstration refused to budge on critical union demands as they bargained for their first contract. The strike resulted in graduate assistants winning guarantees of 3 to 4 years of support, a grievance procedure, workload limitations, class size limitations, and health insurance.",
+                                                time: "1970",
+                                                icon: graduateIcon
                                             },
                                         },
                                         {
@@ -1739,10 +1751,10 @@
                                                 type: "Point",
                                                 coordinates: [-89.413131232275, 43.07648226405]},
                                             properties: {
-                                                title: "Teaching Assistants’ Association",
-                                                description: "The <a href=\"https://taa-madison.org\" target=\"_blank\">Teaching Assistants' Association</a> (CWA Local 1104) has been organizing graduate workers at the University of Wisconsin-Madison since 1969.",
-                                                time: "1969",
-                                                icon: publicIcon
+                                                title: "<a href=\"https://www.geo3550.org/about/history\" target=\"_blank\">GEO Recognition Strike</a>",
+                                                description: "In 1975, 700 members of the Graduate Employees' Organization at the University of Michigan struck for over a month to win their first contract after university officials slowed negotiations and declined to engage in binding arbitrition, picketing university buildings beginning on February 11. Teamster locals refused to drive through the picket lines in solidarity. GEO won gains in anti-discrimination and and affirmative action protections as well as rights to grieve TA appointment fractions.",
+                                                time: "1975",
+                                                icon: graduateIcon
                                             }
                                         }
                                     ]
