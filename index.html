@@ -1749,15 +1749,55 @@
                                             type: "Feature",
                                             geometry: {
                                                 type: "Point",
-                                                coordinates: [-89.413131232275, 43.07648226405]},
+                                                coordinates: [-83.73826701521266, 42.27791658951909]},
                                             properties: {
                                                 title: "<a href=\"https://www.geo3550.org/about/history\" target=\"_blank\">GEO Recognition Strike</a>",
                                                 description: "In 1975, 700 members of the Graduate Employees' Organization at the University of Michigan struck for over a month to win their first contract after university officials slowed negotiations and declined to engage in binding arbitrition, picketing university buildings beginning on February 11. Teamster locals refused to drive through the picket lines in solidarity. GEO won gains in anti-discrimination and and affirmative action protections as well as rights to grieve TA appointment fractions.",
                                                 time: "1975",
                                                 icon: graduateIcon
                                             }
+                                        },
+                                        {
+                                            type: "Feature",
+                                            geometry: {
+                                                type: "Point",
+                                                coordinates: [-71.10540983231459, 42.35046795513232]},
+                                            properties: {
+                                                title: "<a href=\"https://www.faculty.umb.edu/gary_zabel/Website/My%20Writings/BU%20Strike.pdf\" target=\"_blank\">Boston University Strike</a>",
+                                                description: "In 1979, approximately 1,300 faculty, staff, librarians, and graduate students struck after the university president and Board of Trustees reneged on an agreed-upon contract proposal. The strike was supported by most faculty, excluding faculty in the Colleges of Law and Engineering, and among undergraduate students. During this time, graduate students formed the Graduate Employees Organizing Committee, which opened possibilites for future graduate unionization. After one week, the university agreed to ratify the faculty contract as previously agreed, and support for the strike fractured among rank-and-file faculty members, even though demands for recognition of the library and clerical unions had not been met. In the end, the librarian and clerical unions were recognized once they, too, agreed to call off the strike.",
+                                                time: "1979",
+                                                icon: facultyIcon
+                                            }
                                         }
-                                    ]
+                                    ];
+                    var dataset2 = [             
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-89.413131232275, 43.07648226405]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://taa-madison.org/history\" target=\"_blank\">TAA Contract Strike</a>",
+                                            description: "In 1980, members of the Teaching Assistants Association at the University of Wisconsin struck for five weeks after the university began to ignore court cases ordering it to enforce the existing contract. In contract renewal bargaining, the university tried to force some teaching assistants to work without pay, misconstruing their labor as fulfillment of degree requirements, not work. Further, the university sought sole power to determine which grievances could proceed to binding arbitration and refused to post hiring criteria for teaching assistants. Faced with these pressures, the union went on strike, beginning in March of 1980 and before returning to work without a contract in May. The university then withdrew from the Structure Agreement, refusing to bargain further. Although the TAA faced losses at the end of this strike, the university's actions prompted the union to address structural weaknesses in their relationship to administration and pursue legal bargaining rights. In October 1985, after intensive lobbying and research, Wisconsin legislation ensured that not only would Teaching Assistants retain bargaining rights, but the university would be legally obligated to bargain in good faith.",
+                                            time: "1980",
+                                            icon: graduateIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                        geometry: {
+                                            type: "Point",
+                                            coordinates: [-73.12395419533412, 40.904771771008726]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://albany1104.wordpress.com\" target=\"_blank\">Stony Brook Funding Strike</a>",
+                                            description: "In 1987, members of the nascent Graduate Student Employees Union at Stony Brook University struck for better funding and union recognition. Teaching Assistants from English and Philosophy began the strike on April 28, and after a mass rally and takeover of the administration building on April 29, the union voted on May 1 for an indefinite strike, set to begin on May 4. On the first day of the full strike, over 40% of TAs and GAs did not show up for work. On May 6, all graduate employees received a $1,000 raise as a result of the strike.",
+                                            time: "1987",
+                                            icon: graduateIcon
+                                        },
+                                    }
+                                ]
 
                                     // Popups
                                     var optionsObject = {
@@ -1774,7 +1814,7 @@
 
                                     // Create the first geoJSON layer
                                     var group1 = L.geoJSON(dataset1, optionsObject);
-                                    //var group2 = L.geoJSON(dataset2, optionsObject);
+                                    var group2 = L.geoJSON(dataset2, optionsObject);
                                     //var group3 = L.geoJSON(dataset3, optionsObject);
                                     //var group4 = L.geoJSON(dataset4, optionsObject);
                                     //var group5 = L.geoJSON(dataset5, optionsObject);
@@ -1783,8 +1823,8 @@
                     
                                 
                                     // Set the time attribute for each group
-                                    group1.options.time = "1960s";
-                                    //group2.options.time = "1970s";
+                                    group1.options.time = "1970s";
+                                    group2.options.time = "1980s";
                                     //group3.options.time = "1980s";
                                     //group4.options.time = "1990s";
                                     //group5.options.time = "2000s";
@@ -1793,7 +1833,7 @@
                     
                     
                                     // Create the layerGroup
-                                    var multiLayers = L.layerGroup([group1]);
+                                    var multiLayers = L.layerGroup([group1, group2]);
 
                                     
                     
