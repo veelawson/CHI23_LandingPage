@@ -35,6 +35,37 @@ a:visited {
     color: #c888c4;
 }
 
+.dropcap {
+  float: left;
+  position: relative;
+  top: -0.30em;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: -0.9em;
+  font-size: 50px;
+  line-height: normal;
+  font-weight: bold;
+  padding: 0px 5px 20px  0px;
+}
+
+.btn {
+  background-color: #F21B2D;
+
+}
+
+.btn:hover {
+  background-color: #A60321;
+}
+
+.btn a:link {
+  color: white;
+}
+
+.btn a:visited {
+  color: #cfc9c7;
+}
+
 /*--------------------------------------------------------------
 # Navbar Section
 --------------------------------------------------------------*/
@@ -195,6 +226,17 @@ a:visited {
   }
 }
 
+/*--------------------------------------------------------------
+# Strike Map Section
+--------------------------------------------------------------*/
+#map2 {
+  height: 85vh;
+}
+
+#strikemaptitle {
+font-family: Arial, Helvetica, sans-serif;
+color: #6D80A6;
+}
 
 /*--------------------------------------------------------------
 # Search Section
