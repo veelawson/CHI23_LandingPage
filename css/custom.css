@@ -5,6 +5,7 @@ body {
 p {
     color: #cfc9c7;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
 }
 
 h1 {
@@ -25,6 +26,11 @@ h3 {
 h4 {
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: #F4B5E3;
+}
+
+h5 {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: #cfc9c7;
 }
 
 a:link {
@@ -66,6 +72,11 @@ a:visited {
   color: #cfc9c7;
 }
 
+#ToC {
+  background-color: #0a1c28;
+  color:#0a1c28;
+}
+
 /*--------------------------------------------------------------
 # Navbar Section
 --------------------------------------------------------------*/
@@ -91,7 +102,7 @@ a:visited {
 }
 #hero:before {
   content: "";
-  background: rgba(19, 3, 0, 0.65);
+  background: rgba(19, 3, 0, 0.70);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -114,17 +125,17 @@ a:visited {
 #hero h1 {
   margin: 0 0 10px 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 48px;
-  font-weight: 300;
+  font-size: 80px;
+  font-weight: 400;
   line-height: 56px;
-  color: #fff;
+  color: white;
 }
 #hero h2 {
-  color: #fff;
+  color: #cfc9c7;
   margin-bottom: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 40px;
+  font-weight: 200;
 }
 
 @media (min-width: 1024px) {
@@ -158,21 +169,21 @@ a:visited {
 
 
 /*--------------------------------------------------------------
-# Pivot Section
+# Pivot1 Section (Intro | Labor History)
 --------------------------------------------------------------*/
-#pivot {
+#pivot1 {
     background-color: #A60321;
-    height: 100vh;
+    height: 50vh;
 }
 
-#pivot {
+#pivot1 {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   background: url("../assets/pivot.png") top center;
   background-size: cover;
   position: relative;
 }
-#pivot:before {
+#pivot1:before {
   content: "";
   background: rgba(19, 3, 0, 0.8);
   position: absolute;
@@ -181,7 +192,7 @@ a:visited {
   left: 0;
   right: 0;
 }
-#pivot .pivot-container {
+#pivot1 .pivot-container {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -194,36 +205,106 @@ a:visited {
   flex-direction: column;
   text-align: center;
 }
-#pivot h1 {
+#pivot1 h1 {
   margin: 0 0 10px 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 75px;
+  font-size: 50px;
   font-weight: 400;
   color: #fff;
 }
-#pivot h2 {
+#pivot1 h2 {
   color: #fff;
   margin-bottom: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 300;
 }
 
 @media (min-width: 1024px) {
-  #pivot {
+  #pivot1 {
     background-attachment: fixed;
   }
 }
 @media (max-width: 768px) {
-  #pivot h1 {
+  #pivot1 h1 {
     font-size: 28px;
     line-height: 36px;
   }
-  #pivot h2 {
+  #pivot1 h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
+}
+
+
+/*--------------------------------------------------------------
+# Pivot2 Section (Labor History | Grad Union History)
+--------------------------------------------------------------*/
+#pivot2 {
+  background-color: #A60321;
+  height: 100vh;
+}
+
+#pivot2 {
+width: 100%;
+height: 100vh;
+background: url("../assets/pivot.png") top center;
+background-size: cover;
+position: relative;
+}
+#pivot2:before {
+content: "";
+background: rgba(19, 3, 0, 0.8);
+position: absolute;
+bottom: 0;
+top: 0;
+left: 0;
+right: 0;
+}
+#pivot2 .pivot-container {
+position: absolute;
+bottom: 0;
+top: 0;
+left: 0;
+right: 0;
+display: flex;
+padding-top: 80px;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+#pivot2 h1 {
+margin: 0 0 10px 0;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 75px;
+font-weight: 400;
+color: #fff;
+}
+#pivot2 h2 {
+color: #fff;
+margin-bottom: 50px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 40px;
+font-weight: 300;
+}
+
+@media (min-width: 1024px) {
+#pivot2 {
+  background-attachment: fixed;
+}
+}
+@media (max-width: 768px) {
+#pivot2 h1 {
+  font-size: 28px;
+  line-height: 36px;
+}
+#pivot2 h2 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
 }
 
 /*--------------------------------------------------------------
