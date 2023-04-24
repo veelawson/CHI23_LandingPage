@@ -1,46 +1,54 @@
 body {
-    background-color: #0a1c28;
-    /*background-color: #cfc9c7;*/
+    /*background-color: #0a1c28;*/
+    background-color: #cfc9c7;
 }
 
 p {
-    color: #cfc9c7;
-    /*color: #0A2B40;*/
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*color: #cfc9c7;*/
+    color: #0D0D0D;
+    /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: medium;
 }
 
 h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #F26BCE;
+  /*color: #F26BCE;*/
+  color: #A60321;
 }
 
 h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #F26BCE;
+  /*color: #F26BCE;*/
+  color: #F21B2D;
 }
 
 h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #F4B5E3;
+  /*color: #F4B5E3;*/
+  color: #BF54B8;
 }
 
 h4 {
   font-family:Georgia, 'Times New Roman', Times, serif;
-  color: #F4B5E3;
+  /*color: #F4B5E3;*/
+  color: #BF54B8;
 }
 
 h5 {
   font-family:Georgia, 'Times New Roman', Times, serif;
-  color: #cfc9c7;
+  /*color: #cfc9c7;*/
+  color: #BF54B8;
 }
 
 a:link {
-    color: #dfa6db;
+    /*color: #dfa6db;*/
+    color: #6D80A6;
 }
 
 a:visited {
-    color: #c888c4;
+    /*color: #c888c4;*/
+    color: #495875;
 }
 
 .dropcap {
@@ -80,7 +88,8 @@ a:visited {
 --------------------------------------------------------------*/
   
 #navbar {
-    background-color: #0d243499;
+    /*background-color: #0d243499;*/
+    background-color: #0D0D0DBF;
     z-index: 1;
 }
 
