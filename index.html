@@ -1691,7 +1691,7 @@
                 <script>
                     var map2 = L.map("map2", {scrollWheelZoom: false}).setView([40.03392176804794, -99.08158185738218], 3.75);
                     L.tileLayer("https://api.mapbox.com/styles/v1/lawsonv/clgv3dq2100b901pff5n48he7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibGF3c29udiIsImEiOiJja3c2bW11dzc4bmp4MnVudXFkMnhtN3Z2In0.Y_r_LnfZaKSbBT5O7kMqnQ", {
-                    attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'style='color: #2E4959'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'style='color: #2E4959'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/'style='color: #2E4959'>Mapbox</a>, Icons by <a href='https://www.flaticon.com/authors/fathema-khanom'>Fathema Khanom</a>",
+                    attribution: "Labor union data from <a href='https://wugwu.org/resources/graduate-and-undergraduate-student-unions'style='color: #2E4959'>WashU Undergraduate & Graduate Workers Union</a>, Map data &copy; <a href='https://www.openstreetmap.org/copyright'style='color: #2E4959'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/'style='color: #2E4959'>Mapbox</a>, Icons by <a href='https://www.flaticon.com/authors/bqlqn'>bqlqn</a>",
                     maxZoom: 18,
                     minZoom: 3.75,
                     id: "mapbox/dark-v10",
@@ -1846,8 +1846,7 @@
                                             icon: graduateIcon
                                             }
                                     }
-                    ];
-
+                                 ];
                     var dataset4 = [
                                     {
                                         type: "Feature",
@@ -1909,10 +1908,128 @@
                                             time: "2004",
                                             icon: graduateIcon
                                         },
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-73.96258343239917, 40.80751922987015]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://www.wikicu.com/Graduate_Student_Employees_United\" target=\"_blank\">Columbia Recognition Strikes</a>",
+                                            description: "In the mid-2000s, the Graduate Student Employees United held several union authorization votes. Due to shifting NLRB regulations for private universities, these votes were not recognized by the university. In response, workers struck for four weeks during April 2004 and held rallies in Morningside Heights in 2005, this time joined by graduates from NYU and Yale.",
+                                            time: "2004",
+                                            icon: graduateIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-88.22718296127313, 40.1019276520456]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://www.labornotes.org/2009/11/university-illinois-caves-after-two-day-grad-strike\" target=\"_blank\">UIUC Bargaining Strike</a>",
+                                            description: "After negotiations stalled over UIUC's refusal to provide tuition waivers to out-of-state graduate students, members of the Graduate Employees Organization struck for two days. The university then agreed to meet their demands.",
+                                            time: "2009",
+                                            icon: graduateIcon
+                                        },
                                     }
+                                ];
 
-                    ]
+                    var dataset5 = [
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-118.44518110390146, 34.0688765362149]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://www.dailycal.org/2013/11/20/uc-service-workers-graduate-students-go-strike\" target=\"_blank\">UC System Recognition Strike</a>",
+                                            description: "Members of UC student-worker union United Auto Workers Local 2865 joined members of the American Federation of State, County and Municipal Employees Local 3299, which represents service and patient-care workers, for a one-day strike to protest unjust intimidation by the University of California system.",
+                                            time: "2013",
+                                            icon: combinedIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-86.52300730365009, 39.168211599622985]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://inthesetimes.com/article/iu-students-strike-against-tuition-hikes\" target=\"_blank\">Indiana University Bargaining Strike</a>",
+                                            description: "Approximately 400 undergraduate students, graduate students, and faculty staged a two-day walkout in protest of Indiana University Bloomington's plan to steeply increase tuition.",
+                                            time: "2013",
+                                            icon: combinedIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-123.07260550338249, 44.04482245924077]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://nwlaborpress.org/2014/12/university-oregon-grad-students-end-strike/\" target=\"_blank\">University of Oregon Bargaining Strike</a>",
+                                            description: "After bargaining negotiations stalled, members of the Graduate Teaching Fellows Federation struck for eight days to win better wages and a new medical and paternity leave fund.",
+                                            time: "2014",
+                                            icon: graduateIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-73.96258343239917, 40.80751922987015]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://columbiagradunion.org/strike2018\" target=\"_blank\">Columbia Recognition Strike</a>",
+                                            description: "Following increasing pressure on the university to recognize the graduate union and continued refusals, graduate students organized a one-week strike.",
+                                            time: "2018",
+                                            icon: graduateIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                        geometry: {
+                                            type: "Point",
+                                            coordinates: [-122.30351990316862, 47.65537120530489]},
+                                        properties: {
+                                            title: "<a href=\"https://www.thestand.org/2018/05/student-employees-at-uw-are-on-strike/#:~:text=SEATTLE%20(May%2015%2C%202018),to%20call%20a%20strike%20should\" target=\"_blank\">University of Washington Bargaining Strike</a>",
+                                            description: "After bargaining negotiations stalled over wages, trans-inclusive health insurance, and improvements to mental health coverage, union members organized a one-day strike to apply pressure on the university.",
+                                            time: "2018",
+                                            icon: graduateIcon
+                                            }
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-88.22718296127313, 40.1019276520456]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://will.illinois.edu/news/story/whats-in-the-new-geo-contract\" target=\"_blank\">UIUC Bargaining Strike</a>",
+                                            description: "Following a 12-day strike, the Graduate Employees' Organization won tuition waiver protections, increased wages, a decrease in health insurance costs, and improved grievance procedures.",
+                                            time: "2018",
+                                            icon: graduateIcon
+                                        },
+                                    },
+                                    {
+                                        type: "Feature",
+                                         geometry: {
+                                            type: "Point",
+                                            coordinates: [-79.04691339996702, 35.9048948194693]
+                                        },
+                                        properties: {
+                                            title: "<a href=\"https://activisthistory.com/2019/08/30/racism-is-a-labor-issue-the-unc-ta-strike-and-black-led-movements-against-white-supremacy/\" target=\"_blank\">UNC 'Strike Down Sam' Anti-racist Strike</a>",
+                                            description: "A 14-day grading strike organized by Teaching Assistants and faculty grading strike was by Teaching Assistants and faculty and was the culmination of a long campaign to remove a Confederate soldier statue named Silent Sam. In addition to removing the statue, the grading strike resulted in the removal of a nearly $1,000 student fee and the resignation of some university administrators.",
+                                            time: "2018",
+                                            icon: combinedIcon
+                                        },
+                                    },
 
+                                ]
                                     // Popups
                                     var optionsObject = {
                                             onEachFeature: onEachFeature,
@@ -1931,7 +2048,7 @@
                                     var group2 = L.geoJSON(dataset2, optionsObject);
                                     var group3 = L.geoJSON(dataset3, optionsObject);
                                     var group4 = L.geoJSON(dataset4, optionsObject);
-                                    //var group5 = L.geoJSON(dataset5, optionsObject);
+                                    var group5 = L.geoJSON(dataset5, optionsObject);
                                     //var group6 = L.geoJSON(dataset6, optionsObject);
                                     //var group7 = L.geoJSON(dataset7, optionsObject);
                     
@@ -1941,13 +2058,13 @@
                                     group2.options.time = "1980s";
                                     group3.options.time = "1990s";
                                     group4.options.time = "2000s";
-                                    //group5.options.time = "2000s";
+                                    group5.options.time = "2010s";
                                     //group6.options.time = "2010s";
                                     //group7.options.time = "2020s";
                     
                     
                                     // Create the layerGroup
-                                    var multiLayers = L.layerGroup([group1, group2, group3, group4]);
+                                    var multiLayers = L.layerGroup([group1, group2, group3, group4, group5]);
 
                                     
                     
