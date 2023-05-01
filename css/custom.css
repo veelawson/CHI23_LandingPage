@@ -32,13 +32,13 @@ h3 {
 h4 {
   font-family:Georgia, 'Times New Roman', Times, serif;
   /*color: #F4B5E3;*/
-  color: #BF54B8;
+  color: #A60321;
 }
 
 h5 {
   font-family:Georgia, 'Times New Roman', Times, serif;
   /*color: #cfc9c7;*/
-  color: #BF54B8;
+  color: #A60321;
 }
 
 h6 {
@@ -48,12 +48,21 @@ h6 {
 
 a:link {
     /*color: #dfa6db;*/
-    color: #6D80A6;
+    color: #A60321;
+}
+
+a:hover {
+  background-color: #0D0D0D;
+  color:#cfc9c7;
 }
 
 a:visited {
     /*color: #c888c4;*/
-    color: #495875;
+    color: #2E4959;
+}
+
+a:visited:hover {
+  color: #cfc9c7;
 }
 
 .dropcap {
@@ -382,7 +391,19 @@ color: #6D80A6;
 # Action Section
 --------------------------------------------------------------*/
 #action {
-  background: #F21B2D;
+  background: #8b000c;
+}
+
+#action h1 {
+  color: white;
+}
+
+#action h3 {
+  color: #cfc9c7;
+}
+
+#action p {
+  color: #cfc9c7;
 }
 
 /*--------------------------------------------------------------
